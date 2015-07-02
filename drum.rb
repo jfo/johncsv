@@ -49,13 +49,22 @@ class Drum
         @price = row
     end
 
-    def handle
+    def handle(id = "")
         "2015_" +
-        @inventory_num + "_" +
+        @inventory_num + id + "_" +
         @item.downcase +
         @wood_class.downcase +
         @wood_type.downcase + "_" +
         @model.downcase
+    end
+
+    def handle_for_img_url(id = "")
+        "2015_" +
+        @inventory_num + id + "_" +
+        @item +
+        @wood_class +
+        @wood_type + "_" +
+        @model
     end
 
     def title
@@ -98,7 +107,7 @@ class Drum
     end
 
     def aws_image_url
-        "https://s3.amazonaws.com/wuladrum/products/#{@@shipment}/W_#{@model}/W_#{handle.upcase}.jpg"
+        "https://s3.amazonaws.com/wuladrum/products/#{@@shipment}/W_#{@model}/W_#{handle_for_img_url("a")}.JPG"
     end
 
     def return_row
