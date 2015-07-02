@@ -66,7 +66,7 @@ class Drum
 
         <<-BODYTEXT
 <br>
-<p><b>SP1 #4000 Specs:</b></p>
+<p><b>#{@model} ##{@inventory_num} Specs:</b></p>
 <ul>
     <li>Wood Type: #{@wood_type}</li>
     <li>Diameter: #{@diameter}"</li>
