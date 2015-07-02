@@ -17,10 +17,17 @@ class Drum
     VARIANT_WEIGHT_UNIT = "lb"
 
     @@shipment = "2015_june_shipment"
+
     @@type_map = {
         "dj" => "djembe",
         "dds" => "dundun set",
         "sb" => "sangban"
+    }
+    @@wood_map = {
+        "k" => "Khadi",
+        "a" => "Acajou",
+        "l" => "Lengue",
+        "d" => "Doukie"
     }
 
     attr_accessor :photo,
@@ -77,7 +84,7 @@ class Drum
 <br>
 <p><b>#{@model} ##{@inventory_num} Specs:</b></p>
 <ul>
-    <li>Wood Type: #{@wood_type}</li>
+    <li>Wood Type: #{@@wood_map[@wood_type.downcase]}</li>
     <li>Diameter: #{@diameter}"</li>
     <li>Height: #{@height}"</li>
     <li>Weight: #{@weight} lbs</li>
